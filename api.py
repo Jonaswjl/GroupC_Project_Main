@@ -1,3 +1,4 @@
+# create a function to find the exchange rate between SGD and USD
 def api_function(): 
     import requests 
     ## Alpha vantage API Key 
