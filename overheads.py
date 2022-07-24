@@ -4,7 +4,7 @@ import csv
 # def overhead_function(): 
 
 
-
+category = []
 overheads = []
 # instantiate a file path to overheads csv file in current working directory 
 file_path = Path.cwd()/"csv_reports2"/"overheads.csv"
@@ -14,9 +14,11 @@ with file_path.open(mode="r",encoding="UTF-8-sig",newline="") as file:
     # create a reader object 
     reader = csv.reader(file)
     next(reader)
-    for line in reader: 
-        for i in line:
-            print(i)
+    for line in reader:
+        category.append(line[0])
+        overheads.append(float(line[1]))
+# print(category)
+# print(max(overheads))
 
 
 
