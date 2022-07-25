@@ -2,12 +2,13 @@ from pathlib import Path
 import csv 
 
 # def overhead_function(): 
-
+list = []
 
 category = []
 overheads = []
+
 # instantiate a file path to overheads csv file in current working directory 
-file_path = Path.cwd()/"csv_reports2"/"overheads.csv"
+file_path = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
 
 # open the csv file in read mode 
 with file_path.open(mode="r",encoding="UTF-8-sig",newline="") as file: 
@@ -17,15 +18,21 @@ with file_path.open(mode="r",encoding="UTF-8-sig",newline="") as file:
     for line in reader:
         category.append(line[0])
         overheads.append(float(line[1]))
+        line.sort()
+        # print(line)
+        list.append(line)
+# print(list)
+dict = dict(list)
+        
 # print(category)
-# print(max(overheads))
+max = max(overheads)
+key = str(max)
+# print(type(key))
+# print(dict[key])
+
+print(f"[Highest Overheads] {dict[key]}: SGD{key}")
 
 
-
-
-#     # print the contents of the csv file 
-#     for line in reader: 
-#         print(line)
 #         # convert the numbers from string to float 
 #         overheads.append(float(line[1]))
 # print(overheads)
