@@ -10,11 +10,19 @@ with file_path.open(mode="r",encoding="UTF-8-sig", newline="") as file:
     next(reader)
     for line in reader:
         net_profit.append(int(line[4]))
-    #for day 6 i cannot add 1 to create a day 7 so must -1
-    for i in range(len(net_profit)-1):
-        diff=(net_profit[i+1]-net_profit[i])
-        dailydiff.append(diff)
-    print(dailydiff)
+
+def profit():
+    i=0
+    while i < (len(net_profit)-1):
+        if net_profit[i] < net_profit[i+1]:
+            message="Net profit of each day is higher than the previous day"
+            return message 
+        else:
+            diff= net_profit[i]-net_profit[i+1]
+            print(diff) 
+
+
+            
 
 
 
