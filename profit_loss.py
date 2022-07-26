@@ -21,7 +21,7 @@ with file_path.open(mode="r",encoding="UTF-8-sig", newline="") as file:
         diff=(net_profit[i+1]-net_profit[i])
         # checks whether difference between days is a negative number, return absolute value of the difference so its not a negative number
         if diff < 0: 
-            print(f"[PROFIT DEFICIT] AMOUNT: {abs(diff)}")
+            print(f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
         else: 
             print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
