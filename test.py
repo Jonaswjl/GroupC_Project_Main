@@ -15,7 +15,9 @@ with file_path.open(mode="r",encoding="UTF-8",newline="") as file:
     # next(reader)
     # append cash on hand to list 
     for line in reader:
+        print(line)
         print(line[0])
+        # print(line[0])
     #     coh.append(int(line[1]))
     # for i in range(len(coh)-1):
     #     diff=(coh[i+1]-coh[i])
