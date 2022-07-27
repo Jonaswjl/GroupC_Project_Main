@@ -8,7 +8,7 @@ coh = []
 # instantiate a file path to the cash on hand csv file 
 file_path = Path.cwd()/"csv_reports"/"cash-on-hand-thb.csv"
 # open file in read mode
-with file_path.open(mode="r",encoding="UTF-8-sig",newline="") as file: 
+with file_path.open(mode="r",encoding="UTF-8",newline="") as file: 
     # create a reader object
     reader = csv.reader(file)
     # skip headers 
