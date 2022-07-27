@@ -12,14 +12,15 @@ with file_path.open(mode="r",encoding="UTF-8",newline="") as file:
     # create a reader object
     reader = csv.reader(file)
     # skip headers 
-    next(reader)
+    # next(reader)
     # append cash on hand to list 
     for line in reader:
-        coh.append(int(line[1]))
-    for i in range(len(coh)-1):
-        diff=(coh[i+1]-coh[i])
-        # checks whether difference between days is a negative number, return absolute value of the difference so its not a negative number
-        if diff < 0: 
-            print(f"[CASH DEFICIT] AMOUNT: {abs(diff)}")
-        else: 
-            print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+        print(line[0])
+    #     coh.append(int(line[1]))
+    # for i in range(len(coh)-1):
+    #     diff=(coh[i+1]-coh[i])
+    #     # checks whether difference between days is a negative number, return absolute value of the difference so its not a negative number
+    #     if diff < 0: 
+    #         print(f"[CASH DEFICIT] AMOUNT: {abs(diff)}")
+    #     else: 
+    #         print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
