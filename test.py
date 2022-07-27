@@ -1,28 +1,41 @@
-## cash on hand 
 from pathlib import Path 
-import csv 
+import csv, math
 
-# create an empty list to store cash on hand values 
-coh = []
+# instantiate a file path to the profit and loss csv file 
 
-# instantiate a file path to the cash on hand csv file 
-file_path = Path.cwd()/"csv_reports"/"cash-on-hand-thb.csv"
-# open file in read mode
-with file_path.open(mode="r",encoding="UTF-8",newline="") as file: 
+# file_path = Path.cwd()/"csv_reports"/"profit-and-loss-thb.csv"
+file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
+
+# create an empty list to append net profit to
+net_profit=[]
+days=[]
+list=[]
+diff_list=[]
+# open file in read mode 
+with file_path.open(mode="r",encoding="UTF-8", newline="") as file: 
     # create a reader object
     reader = csv.reader(file)
-    # skip headers 
-    # next(reader)
-    # append cash on hand to list 
+    # skip the headers
+    next(reader)
+    # append values of net profit to empty list
     for line in reader:
-        print(line)
-        print(line[0])
-        # print(line[0])
-    #     coh.append(int(line[1]))
-    # for i in range(len(coh)-1):
-    #     diff=(coh[i+1]-coh[i])
-    #     # checks whether difference between days is a negative number, return absolute value of the difference so its not a negative number
-    #     if diff < 0: 
-    #         print(f"[CASH DEFICIT] AMOUNT: {abs(diff)}")
-    #     else: 
-    #         print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+        net_profit.append(float(line[4]))
+        line.pop(1)
+        # print(line)
+        line.pop(1)
+        # print(line)
+        line.pop(1)
+        # print(line)
+        line.sort()
+        list.append(line)
+
+
+        
+# print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+# print(f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
+
+
+    
+    
+
+
