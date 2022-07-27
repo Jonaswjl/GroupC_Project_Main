@@ -18,38 +18,16 @@ with file_path.open(mode="r",encoding="UTF-8", newline="") as file:
     for line in reader:
         net_profit.append(float(line[4]))
 
-    day=(len(net_profit)-1)   
-    for i in range(day):
-        diff=(net_profit[i+1]-net_profit[i])
-        if diff < 0: 
-            print( f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
-        else: 
-            print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+day=(len(net_profit)-1)   
+for i in range(day):
+    diff=(net_profit[i+1]-net_profit[i])
+    if diff < 0: 
+        print( f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
+    else: 
+        print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
         
 
-# print(net_profit)
-# def profit():
-#     day=(len(net_profit)-1)   
-#     for i in range(day):
-#         diff=(net_profit[i+1]-net_profit[i])
-# #       checks whether difference between days is a negative number, return absolute value of the difference so its not a negative number
-#         if diff < 0: 
-#             print(f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
-#         else: 
-#             print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-
-# print(profit())
-            
-# net_profit.append(int(line[4]))
-#     #for day 6 i cannot add 1 to create a day 7 so must -1
-# for i in range(len(net_profit)-1):
-#         diff=(net_profit[i+1]-net_profit[i])
-#         # checks whether difference between days is a negative number, return absolute value of the difference so its not a negative number
-#         if diff < 0: 
-#             print(f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
-#         else: 
-#             print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
 
 
