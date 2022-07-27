@@ -6,7 +6,7 @@ file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
 
 # create an empty list to append net profit to
 net_profit=[]
-days=[]
+dd=[]
 list=[]
 # open file in read mode 
 with file_path.open(mode="r",encoding="UTF-8", newline="") as file: 
@@ -18,15 +18,21 @@ with file_path.open(mode="r",encoding="UTF-8", newline="") as file:
     for line in reader:
         net_profit.append(float(line[4]))
 
-day=(len(net_profit)-1)   
-for i in range(day):
-    diff=(net_profit[i+1]-net_profit[i])
-    if diff < 0: 
-        print( f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
-    else: 
-        print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+        day=(len(net_profit)-1)  
+        for i in range(day):
+            diff=(net_profit[i+1]-net_profit[i])
+            dd.append([diff]+[line[0]])
+dict=dict(dd)
+print(dict)
 
-        
+if diff < 0: 
+    print( f"[PROFIT DEFICIT] DAY:{dict[diff]} AMOUNT: SGD{abs(diff)}")
+else: 
+    print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
+
+
+
 
 
 
