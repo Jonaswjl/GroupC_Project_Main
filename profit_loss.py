@@ -16,15 +16,16 @@ with file_path.open(mode="r",encoding="UTF-8", newline="") as file:
     next(reader)
     # append values of net profit to empty list
     for line in reader:
-        net_profit.append([line[0]]+[float(line[4])])
-    print(net_profit)
-        # day=(len(net_profit)-1)   
-        # for i in range(day):
-        #     diff=(net_profit[i+1]-net_profit[i])
-        #     if diff < 0: 
-        #         print(f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
-        #     else: 
-        #         print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+        net_profit.append(float(line[4]))
+
+    day=(len(net_profit)-1)   
+    for i in range(day):
+        diff=(net_profit[i+1]-net_profit[i])
+        if diff < 0: 
+            print( f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
+        else: 
+            print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
         
 
 # print(net_profit)
