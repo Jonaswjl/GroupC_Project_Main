@@ -20,7 +20,6 @@ with file_path.open(mode="r",encoding="UTF-8-sig",newline="") as file:
         diff=(coh[i+1]-coh[i])
         # checks whether difference between days is a negative number, return absolute value of the difference so its not a negative number
         if diff < 0: 
-            print(f"[CASH DEFICIT] AMOUNT: SGD{abs(diff)}")
+            print(f"[CASH DEFICIT] AMOUNT: {abs(diff)}")
         else: 
             print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-
