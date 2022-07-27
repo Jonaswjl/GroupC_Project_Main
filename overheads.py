@@ -19,10 +19,12 @@ with file_path.open(mode="r",encoding="UTF-8-sig",newline="") as file:
     for line in reader:
         # append the value of overheads to the empty list
         overheads.append(float(line[1]))
+    # print(overheads)
         # shift the values in front of category
         line.sort()
         # append the sorted lists to an empty list
         list.append(line)
+    print(list)
 
 # convert the list of sublists into a dictionary 
 dict = dict(list)
