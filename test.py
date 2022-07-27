@@ -20,26 +20,16 @@ with file_path.open(mode="r",encoding="UTF-8", newline="") as file:
     # append values of net profit to empty list
     for line in reader:
         net_profit.append(float(line[4]))
-    day=(len(net_profit)-1)   
-    for i in range(day):
-        diff=(net_profit[i+1]-net_profit[i])
-        diff_list.append(diff)
-        # check through all the difference and see if they are all greater than 0
-        list_prod = math.prod(diff_list)
-        
-diff=(net_profit[i+1]-net_profit[i])
-for i in range(day):
-    # if all the differences are greater than 0, return a single statement which states that all the differences are greater than 0 
-    if list_prod > 0: 
-        print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-        break
-    # # if not all differences are greater than 0 return the amounts which are less than 0
-    elif list_prod < 0: 
-        
-        
+        line.pop(1)
+        # print(line)
+        line.pop(1)
+        # print(line)
+        line.pop(1)
+        # print(line)
+        line.sort()
+        list.append(line)
 
 
-    # if not all differences are greater than 0 return the amounts which are less than 0
         
 # print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 # print(f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
