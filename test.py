@@ -1,28 +1,51 @@
-## cash on hand 
 from pathlib import Path 
-import csv 
+import csv, math
 
-# create an empty list to store cash on hand values 
-coh = []
+# instantiate a file path to the profit and loss csv file 
 
-# instantiate a file path to the cash on hand csv file 
-file_path = Path.cwd()/"csv_reports"/"cash-on-hand-thb.csv"
-# open file in read mode
-with file_path.open(mode="r",encoding="UTF-8",newline="") as file: 
+# file_path = Path.cwd()/"csv_reports"/"profit-and-loss-thb.csv"
+file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
+
+# create an empty list to append net profit to
+net_profit=[]
+days=[]
+list=[]
+diff_list=[]
+# open file in read mode 
+with file_path.open(mode="r",encoding="UTF-8", newline="") as file: 
     # create a reader object
     reader = csv.reader(file)
-    # skip headers 
-    # next(reader)
-    # append cash on hand to list 
+    # skip the headers
+    next(reader)
+    # append values of net profit to empty list
     for line in reader:
-        print(line)
-        print(line[0])
-        # print(line[0])
-    #     coh.append(int(line[1]))
-    # for i in range(len(coh)-1):
-    #     diff=(coh[i+1]-coh[i])
-    #     # checks whether difference between days is a negative number, return absolute value of the difference so its not a negative number
-    #     if diff < 0: 
-    #         print(f"[CASH DEFICIT] AMOUNT: {abs(diff)}")
-    #     else: 
-    #         print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+        net_profit.append(float(line[4]))
+    day=(len(net_profit)-1)   
+    for i in range(day):
+        diff=(net_profit[i+1]-net_profit[i])
+        diff_list.append(diff)
+        # check through all the difference and see if they are all greater than 0
+        list_prod = math.prod(diff_list)
+        
+diff=(net_profit[i+1]-net_profit[i])
+for i in range(day):
+    # if all the differences are greater than 0, return a single statement which states that all the differences are greater than 0 
+    if list_prod > 0: 
+        print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+        break
+    # # if not all differences are greater than 0 return the amounts which are less than 0
+    elif list_prod < 0: 
+        
+        
+
+
+    # if not all differences are greater than 0 return the amounts which are less than 0
+        
+# print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+# print(f"[PROFIT DEFICIT] AMOUNT: SGD{abs(diff)}")
+
+
+    
+    
+
+
