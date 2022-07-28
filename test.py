@@ -1,6 +1,7 @@
-import api
-x = api.api_function
-print(x)
+from api import * 
+# api_function()
+value = api_function()
+print(value)
 
     
     
