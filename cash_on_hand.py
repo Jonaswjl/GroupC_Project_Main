@@ -1,7 +1,7 @@
 def coh_function(): 
     from pathlib import Path 
     import csv
-    
+    import api 
     coh=[]
     dd=[]
     d=[]
@@ -27,15 +27,16 @@ def coh_function():
 
     #convert nested list into a dictionary where day number is the key and profit difference is the value 
     dictionary =dict(dd)
+    er= api.rate
     is_positive= True
     for pd in dictionary:
         #dict[pd] accesses the values (profit diff) and pd is the key 
         if dictionary[pd] < 0: 
-            print(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{abs(dictionary[pd])}")
+            print(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{abs(dictionary[pd])*er}")
             is_positive= False 
     # This else executes only if the break never happens
     if is_positive==True:
         print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-
-
+    
+coh_function()
     
