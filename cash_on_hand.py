@@ -1,4 +1,4 @@
-def coh_function(exchangerate): 
+def coh_function(): 
     from pathlib import Path 
     import csv
     
@@ -31,7 +31,7 @@ def coh_function(exchangerate):
     for pd in dictionary:
         #dict[pd] accesses the values (profit diff) and pd is the key 
         if dictionary[pd] < 0: 
-            print(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{abs(dictionary[pd]*exchangerate)}")
+            print(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{abs(dictionary[pd])}")
             is_positive= False 
     # This else executes only if the break never happens
     if is_positive==True:
