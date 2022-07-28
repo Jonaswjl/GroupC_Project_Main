@@ -38,7 +38,6 @@ def overhead_function():
 
     print(f"[Highest Overheads] {value}: SGD{key}")
     
-overhead_function()
 
 
 

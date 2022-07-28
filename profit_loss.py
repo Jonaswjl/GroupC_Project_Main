@@ -38,7 +38,6 @@ def profitloss_function():
     if is_positive==True:
             print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
-profitloss_function()
 
         
         

@@ -37,5 +37,5 @@ def coh_function():
     if is_positive==True:
         print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
-coh_function()
+
     
