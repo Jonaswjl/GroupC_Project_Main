@@ -38,7 +38,7 @@ for pd in dict:
         print( f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{abs(dict[pd])}")
         #if the condition above is met the for loop breaks 
         break
-# This else executes only if the break never reached
+# This else executes only if the break never happens
 else: 
     print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
         
