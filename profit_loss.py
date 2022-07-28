@@ -1,8 +1,14 @@
 def profitloss_function():
     from pathlib import Path 
     import csv
+    import api 
+    
+    forex = api.rate()
+
     # instantiate a file path to the profit and loss csv file 
     file_path = Path.cwd()/"csv_reports_game"/"profit-and-loss-usd-42.csv"
+    # file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
+
     # create an empty list to append net profit 
     net_profit=[]
     dd=[]
@@ -32,11 +38,12 @@ def profitloss_function():
     for pd in dictionary:
         #dict[pd] accesses the values (profit diff) and pd is the key 
         if dictionary[pd] < 0 : 
-            print(f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{abs(dictionary[pd])}")
+            print(f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{round(abs(dictionary[pd]*forex),1)}")
             is_positive= False
             
     if is_positive==True:
             print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+profitloss_function()
 
 
         
