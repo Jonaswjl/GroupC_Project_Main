@@ -5,7 +5,7 @@ def coh_function():
     coh=[]
     dd=[]
     d=[]
-    file_path = Path.cwd()/"csv_reports"/"cash-on-hand-thb.csv"
+    file_path = Path.cwd()/"csv_reports_game"/"cash-on-hand-usd-42.csv"
     # open file in read mode 
     with file_path.open(mode="r",encoding="UTF-8", newline="") as file: 
         # create a reader object

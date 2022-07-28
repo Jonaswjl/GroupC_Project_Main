@@ -8,7 +8,7 @@ def overhead_function():
     overheads = []
 
     # instantiate a file path to overheads csv file in current working directory 
-    file_path = Path.cwd()/"csv_reports2"/"overheads.csv"
+    file_path = Path.cwd()/"csv_reports_game"/"overheads-day-42.csv"
 
     # open the csv file in read mode 
     with file_path.open(mode="r",encoding="UTF-8-sig",newline="") as file: 
