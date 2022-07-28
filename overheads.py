@@ -40,14 +40,5 @@ def overhead_function():
     
 overhead_function()
 
-    #         # convert the numbers from string to float 
-    #         overheads.append(float(line[1]))
-    # print(overheads)
-    # # sort the numbers in descending order
-    # overheads.sort(reverse=True)
-    # print(overheads)
-    # # print the largest number which is the highest overhead cost
-    # print(overheads[0])
-
 
 
