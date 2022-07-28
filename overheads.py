@@ -1,6 +1,7 @@
 def overhead_function():
     from pathlib import Path 
     import csv 
+    # import api
 
     # create an empty list to store the category and value of overheads
     list = []
@@ -36,7 +37,9 @@ def overhead_function():
     # use the key to find the value which the category of the highest overhead
     value = dictionary[key]
 
-    print(f"[Highest Overheads] {value}: SGD{key}")
+    print(f"[Highest Overheads] {value}: SGD{maximum}")
+
+overhead_function()
     
 
 
