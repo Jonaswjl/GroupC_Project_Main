@@ -1,12 +1,8 @@
-from pathlib import Path 
-import csv
-
-
-
-# instantiate a file path to the profit and loss csv file 
-file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
-
 def profitloss_function():
+    from pathlib import Path 
+    import csv
+    # instantiate a file path to the profit and loss csv file 
+    file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
     # create an empty list to append net profit 
     net_profit=[]
     dd=[]
