@@ -1,7 +1,4 @@
 # create a function to find the exchange rate between SGD and USD
-from xmlrpc.client import ResponseError
-
-
 def api_function(): 
     import requests 
     ## Alpha vantage API Key 
