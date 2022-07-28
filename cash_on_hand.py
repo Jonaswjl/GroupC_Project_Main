@@ -3,7 +3,7 @@ def coh_function():
     import csv
     import api 
 
-    forex = api.rate()
+    forex = api.rate_function()
 
     coh=[]
     dd=[]

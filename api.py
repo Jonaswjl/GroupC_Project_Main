@@ -13,7 +13,7 @@ def api_function():
     rate = float(rate)
     print(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{rate}")
 
-def rate():
+def rate_function():
     import requests 
     ## Alpha vantage API Key 
     api_key = "1H49MTNIA7TNIJLO"
