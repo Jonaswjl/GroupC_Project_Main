@@ -8,7 +8,6 @@ def api_function():
     url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={api_key}"
 
     response = requests.get(url)
-    print(response)
     data = response.json()
     rate = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
     print(f"USD1 = SGD{rate}")
