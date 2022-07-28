@@ -1,7 +1,7 @@
 ## cash on hand 
 from pathlib import Path 
 import csv
-from pickle import FALSE, TRUE 
+
 
 coh=[]
 dd=[]
@@ -29,13 +29,13 @@ for i in range(day):
 #convert nested list into a dictionary where day number is the key and profit difference is the value 
 dict=dict(dd)
 print(dict)
-is_positive= TRUE
+is_positive= True
 for pd in dict:
     #dict[pd] accesses the values (profit diff) and pd is the key 
     if dict[pd] < 0: 
         print(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{abs(dict[pd])}")
-        is_positive= FALSE   
+        is_positive= False 
 # This else executes only if the break never happens
-if is_positive==TRUE:
+if is_positive==True:
     print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
     
