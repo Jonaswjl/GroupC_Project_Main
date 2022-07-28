@@ -41,20 +41,3 @@ for pd in dict:
 # This else executes only if the break never happens
 else: 
     print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-        
-        
-
-
-
-
-
-
-
-
-    
-    
-
-
-
-
-
