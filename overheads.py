@@ -24,7 +24,6 @@ with file_path.open(mode="r",encoding="UTF-8-sig",newline="") as file:
         line.sort()
         # append the sorted lists to an empty list
         list.append(line)
-    print(list)
 
 # convert the list of sublists into a dictionary 
 dict = dict(list)

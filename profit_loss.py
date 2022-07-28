@@ -1,10 +1,11 @@
 from pathlib import Path 
 import csv
+from pickle import FALSE, TRUE
 
 
 # instantiate a file path to the profit and loss csv file 
 file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
-
+# file_path = Path.cwd()/"csv_reports"/"profit-and-loss-thb.csv"
 # create an empty list to append net profit 
 net_profit=[]
 # create an empty list to append the day and difference of net profit 
@@ -31,16 +32,18 @@ for i in range(day):
 
 #convert nested list into a dictionary where day number is the key and profit difference is the value 
 dict=dict(dd)
-print(dict)
+is_positive= TRUE
 for pd in dict:
     #dict[pd] accesses the values (profit diff) and pd is the key 
-    if dict[pd] < 0: 
+    if dict[pd] < 0 : 
         print( f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{abs(dict[pd])}")
-        #if the condition above is met the for loop breaks 
+        is_positive= FALSE   
+if is_positive==TRUE:
+        print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
+
+
         
-# This else executes only if the break never happens
-else: 
-    print( f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
         
         
 
