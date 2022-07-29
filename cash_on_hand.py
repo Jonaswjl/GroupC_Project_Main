@@ -34,10 +34,13 @@ def coh_function():
     for pd in dictionary:
         #dict[pd] accesses the values (profit diff) and pd is the key 
         if dictionary[pd] < 0: 
-            print(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{round(abs(dictionary[pd])*forex)}")
+            print(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{round(((dictionary[pd])*forex*-1),1)}")
             is_positive= False 
     # This else executes only if the break never happens
     if is_positive==True:
         print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
+
+coh_function()
 
     
