@@ -9,7 +9,6 @@ def api_function():
 
     response = requests.get(url)
     data = response.json()
-    print(data)
     # rate = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
     for info in data:
         rate=data[info]['5. Exchange Rate']
@@ -28,6 +27,6 @@ def rate_function():
     data = response.json()
     for info in data:
         rate=data[info]['5. Exchange Rate']
+    # rate = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
     rate = float(rate)
     return rate
-api_function()
