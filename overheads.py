@@ -39,7 +39,7 @@ def overhead_function():
     # use the key to find the value which the category of the highest overhead
     value = dictionary[key]
 
-    print(f"[Highest Overheads] {value}: SGD{round(maximum*forex,1)}")
+    return f"[Highest Overheads] {value}: SGD{round(maximum*forex,1)}"
 
 
     
