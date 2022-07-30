@@ -13,7 +13,7 @@ def api_function():
     for info in data:
         rate=data[info]['5. Exchange Rate']
     rate = float(rate)
-    print(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{rate}")
+    return f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{rate}"
 
 def rate_function():
     import requests 

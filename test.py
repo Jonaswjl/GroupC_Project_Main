@@ -1,35 +1,18 @@
-# create a function to find the exchange rate between SGD and USD
-def api_function(): 
-    import requests 
-    ## Alpha vantage API Key 
-    api_key = "1H49MTNIA7TNIJLO"
+import api, cash_on_hand,overheads,profit_loss
+from pathlib import Path
+# def main(): 
+#     api.api_function()
+#     overheads.overhead_function()
+#     cash_on_hand.coh_function()
+#     profit_loss.profitloss_function()
 
-    ## Calling API from python 
-    url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={api_key}"
-
-    response = requests.get(url)
-    data = response.json()
-    # rate = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
-    for info in data:
-        rate=data[info]['5. Exchange Rate']
-    rate = float(rate)
-    print(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{rate}")
-
-def rate_function():
-    import requests 
-    ## Alpha vantage API Key 
-    api_key = "1H49MTNIA7TNIJLO"
-
-    ## Calling API from python 
-    url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={api_key}"
-
-    response = requests.get(url)
-    data = response.json()
-    for info in data:
-        rate=data[info]['5. Exchange Rate']
-    # rate = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
-    rate = float(rate)
-    return rate
+file_path=  Path.cwd()/"Summary_report.txt"
+file_path.touch()
+# main()
+i = api.api_function()
+print(i)
+with file_path.open(mode="w", encoding = "UTF-8") as file: 
+    file.writelines(i)
     
     
 
