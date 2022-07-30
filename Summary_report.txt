@@ -1,1 +1,2 @@
-[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD1.38[Highest Overheads] Salary Expense: SGD39.1
+[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD1.38
+[Highest Overheads] Salary Expense: SGD39.1

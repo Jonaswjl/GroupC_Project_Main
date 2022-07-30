@@ -18,6 +18,7 @@ b = overheads.overhead_function()
 file_path=  Path.cwd()/"Summary_report.txt"
 file_path.touch()
 with file_path.open(mode="w", encoding = "UTF-8",newline="\n") as file: 
-    file.writelines(a)
-    file.writelines(b)
+    file.write(a)
+    file.write("\n")
+    file.write(b)
 
