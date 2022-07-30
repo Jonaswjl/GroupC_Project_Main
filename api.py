@@ -11,7 +11,7 @@ def api_function():
     data = response.json()
     rate = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
     rate = float(rate)
-    print( f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{rate}")
+    return f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{rate}"
 
 
 def rate_function():
