@@ -6,6 +6,7 @@ def main():
     overheads.overhead_function()
     cash_on_hand.coh_function()
     profit_loss.profitloss_function()
+print(main())
 
 a = api.api_function()
 b = overheads.overhead_function()
