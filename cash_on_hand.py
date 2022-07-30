@@ -8,6 +8,8 @@ def coh_function():
     coh=[]
     dd=[]
     d=[]
+    results = []
+
     file_path = Path.cwd()/"csv_reports_game"/"cash-on-hand-usd-42.csv"
     # file_path = Path.cwd()/"csv_reports2"/"cash on hand.csv"
     # open file in read mode 
@@ -35,10 +37,10 @@ def coh_function():
     for pd in dictionary:
         #dict[pd] accesses the values (profit diff) and pd is the key 
         if dictionary[pd] < 0: 
-            print(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{round(((dictionary[pd])*forex*-1),1)}")
+            results.append(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{round(((dictionary[pd])*forex*-1),1)}")
             is_positive= False 
     if is_positive==True:
-        print(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-
+        results.append(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+    return results
 
     
