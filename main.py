@@ -6,6 +6,8 @@ def main():
     cash_on_hand.coh_function()
     profit_loss.profitloss_function()
 
+i = api.api_function()
 file_path=  Path.cwd()/"Summary_report.txt"
 file_path.touch()
-
+with file_path.open(mode="w", encoding = "UTF-8") as file: 
+    file.writelines(i)
