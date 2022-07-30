@@ -40,11 +40,12 @@ for pd in dictionary:
         # is_positive= False
         # return f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{round(abs(dictionary[pd]*forex),1)}"
         result.append(f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{round(abs(dictionary[pd]*forex),1)}\n")
+        print(f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{round(abs(dictionary[pd]*forex),1)}")
         is_positive= False
 if is_positive==True:
-        # return f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
         result.append(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-    
+        print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
 file_path =  Path.cwd()/"test.txt"
 file_path.touch()
 if file_path.exists(): 
@@ -52,5 +53,6 @@ if file_path.exists():
         file.writelines(result)
 else: 
     print("file doesn't exist")
+
 
 
