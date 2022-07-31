@@ -6,8 +6,8 @@ def profitloss_function():
     forex = api.rate_function()
 
     # instantiate a file path to the profit and loss csv file 
-    # file_path = Path.cwd()/"csv_reports_game"/"profit-and-loss-usd-42.csv"
-    file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
+    file_path = Path.cwd()/"csv_reports_game"/"profit-and-loss-usd-42.csv"
+    # file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
 
     # create an empty list to append net profit 
     net_profit=[]

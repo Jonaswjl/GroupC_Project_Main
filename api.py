@@ -1,4 +1,6 @@
 # create a function to find the exchange rate between SGD and USD
+
+
 def api_function(): 
     import requests 
     ## Alpha vantage API Key 
@@ -9,7 +11,7 @@ def api_function():
 
     response = requests.get(url)
     data = response.json()
-    rate = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
+    rate=data['Realtime Currency Exchange Rate']['5. Exchange Rate']
     rate = float(rate)
     return f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{rate}"
 
@@ -24,7 +26,8 @@ def rate_function():
 
     response = requests.get(url)
     data = response.json()
-    for info in data:
-        rate=data[info]['5. Exchange Rate']
+    rate= data['Realtime Currency Exchange Rate']['5. Exchange Rate']
     rate = float(rate)
     return rate
+
+
