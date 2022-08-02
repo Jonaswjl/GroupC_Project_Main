@@ -1,6 +1,9 @@
+# Create a function with a parameter "forex"
 def overhead_function(forex):
+    # Import path method from Pathlib
     from pathlib import Path 
-    import csv 
+    # Import csv module 
+    import csv
 
     # create an empty list to store the category and value of overheads
     list = []
@@ -21,7 +24,6 @@ def overhead_function(forex):
         for line in reader:
             # append the value of overheads to the empty list
             overheads.append(float(line[1]))
-        # print(overheads)
             # shift the values in front of category
             line.sort()
             # append the sorted lists to an empty list
@@ -36,9 +38,15 @@ def overhead_function(forex):
     key = str(maximum)
     # use the key to find the value which the category of the highest overhead
     value = dictionary[key]
+    # If the api function incurs a key error and prints the note because of the exception handling, 
+    # we would be multiplying the overheads by a string which would incur a type error
+    # Hence, we used try to run the code as follows:
     try: 
+        # Return the final message, converting the overhead value to SGD and using round() to round the value up to 1 decimal place
         return f"[Highest Overheads] {value}: SGD{round(maximum*forex,1)}"
+    # If a type error occurs,
     except TypeError: 
+        # return this final message 
         return f"Limit reached"
 
 
