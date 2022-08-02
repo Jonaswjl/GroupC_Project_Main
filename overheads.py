@@ -1,9 +1,8 @@
-def overhead_function():
+def overhead_function(forex):
     from pathlib import Path 
     import csv 
-    import api
-
-    forex = api.rate_function()
+    # import api
+    # forex = api.rate_function()
 
     # create an empty list to store the category and value of overheads
     list = []

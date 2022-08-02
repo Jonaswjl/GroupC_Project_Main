@@ -1,9 +1,9 @@
-def profitloss_function():
+def profitloss_function(forex):
     from pathlib import Path 
     import csv
-    import api 
+    # import api 
     
-    forex = api.rate_function()
+    # forex = api.rate_function()
 
     # instantiate a file path to the profit and loss csv file 
     file_path = Path.cwd()/"csv_reports_game"/"profit-and-loss-usd-42.csv"
