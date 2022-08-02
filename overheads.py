@@ -1,8 +1,6 @@
 def overhead_function(forex):
     from pathlib import Path 
     import csv 
-    # import api
-    # forex = api.rate_function()
 
     # create an empty list to store the category and value of overheads
     list = []
@@ -10,7 +8,8 @@ def overhead_function(forex):
     overheads = []
 
     # instantiate a file path to overheads csv file in current working directory 
-    file_path = Path.cwd()/"csv_reports_game"/"overheads-day-42.csv"
+    # file_path = Path.cwd()/"csv_reports_game"/"overheads-day-42.csv"
+    file_path = Path.cwd()/"csv_reports2"/"overheads.csv"
 
     # open the csv file in read mode 
     with file_path.open(mode="r",encoding="UTF-8",newline="") as file: 
@@ -37,8 +36,10 @@ def overhead_function(forex):
     key = str(maximum)
     # use the key to find the value which the category of the highest overhead
     value = dictionary[key]
-
-    return f"[Highest Overheads] {value}: SGD{round(maximum*forex,1)}"
+    try: 
+        return f"[Highest Overheads] {value}: SGD{round(maximum*forex,1)}"
+    except TypeError: 
+        return f"Limit reached"
 
 
     

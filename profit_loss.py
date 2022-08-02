@@ -6,8 +6,8 @@ def profitloss_function(forex):
     # forex = api.rate_function()
 
     # instantiate a file path to the profit and loss csv file 
-    file_path = Path.cwd()/"csv_reports_game"/"profit-and-loss-usd-42.csv"
-    # file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
+    # file_path = Path.cwd()/"csv_reports_game"/"profit-and-loss-usd-42.csv"
+    file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
 
     # create an empty list to append net profit 
     net_profit=[]
@@ -36,19 +36,21 @@ def profitloss_function(forex):
 
     #convert nested list into a dictionary where day number is the key and profit difference is the value 
     dictionary=dict(dd)
-    is_positive= True
-    for pd in dictionary:
-        #dict[pd] accesses the values (profit diff) and pd is the key 
-        if dictionary[pd] < 0 : 
-            # is_positive= False
-            # return f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{round(abs(dictionary[pd]*forex),1)}"
-            result.append(f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{round(abs(dictionary[pd]*forex),1)}\n")
-            is_positive= False
-    if is_positive==True:
-            # return f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
-            result.append(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-
-    return result
+    try: 
+        is_positive= True
+        for pd in dictionary:
+            #dict[pd] accesses the values (profit diff) and pd is the key 
+            if dictionary[pd] < 0 : 
+                # is_positive= False
+                # return f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{round(abs(dictionary[pd]*forex),1)}"
+                result.append(f"[PROFIT DEFICIT] DAY: {pd} AMOUNT: SGD{round(abs(dictionary[pd]*forex),1)}\n")
+                is_positive= False
+        if is_positive==True:
+                # return f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+                result.append(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+        return result
+    except TypeError: 
+        return f"Limit reached"
 
         
         

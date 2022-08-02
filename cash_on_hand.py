@@ -1,3 +1,6 @@
+from typing import Type
+
+
 def coh_function(forex): 
     from pathlib import Path 
     import csv
@@ -7,8 +10,8 @@ def coh_function(forex):
     d=[]
     results = []
 
-    file_path = Path.cwd()/"csv_reports_game"/"cash-on-hand-usd-42.csv"
-    # file_path = Path.cwd()/"csv_reports2"/"cash on hand.csv"
+    # file_path = Path.cwd()/"csv_reports_game"/"cash-on-hand-usd-42.csv"
+    file_path = Path.cwd()/"csv_reports2"/"cash on hand.csv"
     # open file in read mode 
     with file_path.open(mode="r",encoding="UTF-8", newline="") as file: 
         # create a reader object
@@ -30,14 +33,17 @@ def coh_function(forex):
 
     #convert nested list into a dictionary where day number is the key and profit difference is the value 
     dictionary =dict(dd)
-    is_positive= True
-    for pd in dictionary:
-        #dict[pd] accesses the values (profit diff) and pd is the key 
-        if dictionary[pd] < 0: 
-            results.append(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{abs(round(((dictionary[pd])*forex),1))}")
-            is_positive= False 
-    if is_positive==True:
-        results.append(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-    return results
+    try: 
+        is_positive= True
+        for pd in dictionary:
+            #dict[pd] accesses the values (profit diff) and pd is the key 
+            if dictionary[pd] < 0: 
+                results.append(f"[CASH DEFICIT] DAY: {pd} AMOUNT: SGD{abs(round(((dictionary[pd])*forex),1))}")
+                is_positive= False 
+        if is_positive==True:
+            results.append(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+        return results
+    except TypeError: 
+        return f"Limit reached"
 
     
