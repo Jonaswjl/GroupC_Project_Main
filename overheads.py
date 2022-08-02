@@ -14,7 +14,7 @@ def overhead_function():
     file_path = Path.cwd()/"csv_reports_game"/"overheads-day-42.csv"
 
     # open the csv file in read mode 
-    with file_path.open(mode="r",encoding="UTF-8-sig",newline="") as file: 
+    with file_path.open(mode="r",encoding="UTF-8",newline="") as file: 
         # create a reader object 
         reader = csv.reader(file)
         # skip the headers
