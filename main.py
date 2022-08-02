@@ -8,7 +8,7 @@ d = profit_loss.profitloss_function()
 
 file_path=  Path.cwd()/"Summary_report.txt"
 file_path.touch()
-with file_path.open(mode="w", encoding = "UTF-8",newline="\n") as file: 
+with file_path.open(mode="w", encoding = "UTF-8") as file: 
     file.write(a)
     file.write("\n")
     file.write(b)
