@@ -37,9 +37,9 @@ def rate_function():
         
         # Calling API from python 
         url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={api_key}"
-        ####
+        # use get method to access to access currency exchange data and assign it to response
         response = requests.get(url)
-        ####
+        # retrieve data as a dicitonary with .json() and assign it to data
         data = response.json()
          # From the dictionary "data", extract the rate 
         rate=data['Realtime Currency Exchange Rate']['5. Exchange Rate']
