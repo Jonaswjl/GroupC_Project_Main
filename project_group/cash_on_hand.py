@@ -10,10 +10,7 @@ def coh_function(forex):
     d=[]
     results = []
 
-    ## file_path = Path.cwd()/"csv_reports_game"/"cash-on-hand-usd-42.csv"
-
-    # Instantiate a file path to the cash on hand csv file 
-    file_path = Path.cwd()/"csv_reports2"/"cash on hand.csv"
+    file_path = Path.cwd()/"csv_reports_game"/"cash-on-hand-usd-42.csv"
     # Open file in read mode 
     with file_path.open(mode="r",encoding="UTF-8", newline="") as file: 
         # Create a reader object

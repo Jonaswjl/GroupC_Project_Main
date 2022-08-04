@@ -5,10 +5,7 @@ def profitloss_function(forex):
     # Import csv module 
     import csv
 
-    ## file_path = Path.cwd()/"csv_reports_game"/"profit-and-loss-usd-42.csv"
-
-    # Instantiate a file path to the profit and loss csv file 
-    file_path = Path.cwd()/"csv_reports2"/"profit and loss.csv"
+    file_path = Path.cwd()/"csv_reports_game"/"profit-and-loss-usd-42.csv"
 
     # create 4 empty lists
     net_profit=[]
